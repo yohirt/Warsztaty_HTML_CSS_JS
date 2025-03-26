@@ -77,3 +77,107 @@ Dodatkowo przy każdej grupie stylów znajdziesz **krótkie wyjaśnienie, do cze
 - Popraw style tak, aby quiz wyglądał estetycznie i był czytelny.
 
 - Uruchom stronę w przeglądarce i sprawdź efekt!
+
+---
+# Zadanie: Rozbudowa quizu – co możesz zmienić?
+
+Poniżej znajdziesz propozycje, jak samodzielnie modyfikować i rozwijać quiz, który stworzyliśmy wcześniej.  
+Zacznij od prostych zmian, a potem spróbuj dodać nowe funkcje!
+
+
+## 1. 🔄 Zmiana i dodanie pytań
+
+W pliku JavaScript znajdź tablicę `questions` i:
+
+- Zmień treść istniejących pytań i odpowiedzi.
+- Dodaj własne pytania w tym samym formacie:
+
+```js
+{
+  question: "Tutaj wpisz swoje pytanie",
+  answers: [
+    { text: "Odpowiedź 1", correct: false },
+    { text: "Odpowiedź 2", correct: true },
+    { text: "Odpowiedź 3", correct: false },
+    { text: "Odpowiedź 4", correct: false }
+  ]
+}
+
+```
+
+# Dodanie timera (licznika czasu) do quizu
+
+## 1. 🧩 Dodaj element HTML do wyświetlania czasu
+
+W pliku `index.html`, w obrębie sekcji quizu (`.quiz-box`), dodaj element na timer:
+
+```html
+<p id="timer" class="timer">Czas: 10s</p>
+```
+## 2. 🎨 Dodaj styl CSS dla timera (opcjonalnie)
+W pliku style.css:
+
+```css
+.timer {
+  font-weight: bold;
+  color: #dc3545;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+```
+## 3. 🧠 Dodaj logikę timera w JavaScript
+W pliku script.js:
+
+### 🔧 Krok 1 – Zmienne globalne:
+Dodaj na górze, obok score, currentQuestionIndex itp.:
+
+```js
+let timeLeft = 10;
+let timer;
+```
+
+## 🔧 Krok 2 – Funkcja startTimer()
+Dodaj ją nad funkcją showQuestion() lub w dowolnym miejscu w pliku:
+
+```js
+function startTimer() {
+  clearInterval(timer); // zatrzymaj poprzedni timer (jeśli jakiś był)
+  timeLeft = 10;
+  document.getElementById("timer").innerText = `Czas: ${timeLeft}s`;
+
+  timer = setInterval(() => {
+    timeLeft--;
+    document.getElementById("timer").innerText = `Czas: ${timeLeft}s`;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      nextButton.click(); // automatycznie przejdź dalej
+    }
+  }, 1000);
+}
+```
+## 🔧 Krok 3 – Uruchom timer przy każdym nowym pytaniu
+W funkcji showQuestion(), po questionElement.innerText = ... dodaj:
+
+```js
+startTimer();
+```
+
+
+## 🔧 Krok 4 – Zatrzymaj timer po udzieleniu odpowiedzi
+
+W funkcji selectAnswer(e) dodaj na początku:
+
+```js
+clearInterval(timer);
+```
+
+Dzięki temu, jeśli użytkownik odpowie, odliczanie się zatrzyma.
+
+## ✅ Finalny efekt
+Licznik pokazuje Czas: 10s przy każdym pytaniu.
+
+Jeśli uczeń nie kliknie odpowiedzi w ciągu 10 sekund — quiz automatycznie przejdzie do kolejnego pytania.
+
+Jeśli uczeń kliknie wcześniej — licznik zatrzymuje się.
