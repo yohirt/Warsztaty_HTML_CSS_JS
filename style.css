@@ -34,11 +34,28 @@
   /* Sekcja paralaksy */
   .parallax {
     /* Tło, które będzie się poruszało wolniej niż okno przeglądarki */
-    
+    background: url('images/wyspa.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh; /* wysokość okna */
+    background-attachment: fixed; /* klucz do efektu paralaksy */
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .quiz-container.parallax{
+    /* Tło, które będzie się poruszało wolniej niż okno przeglądarki */
+    background: url('images/mgla.jpg') no-repeat center center; 
+    background-attachment: fixed; /* klucz do efektu paralaksy */
+}
+
+.game-container.parallax {
+    /* Tło, które będzie się poruszało wolniej niż okno przeglądarki */
+    background: url('images/pustynia.jpg') no-repeat center center;
+    background-attachment: fixed; /* klucz do efektu paralaksy */
+  }
+
   .parallax-content {
     background: rgba(255,255,255,0.7);
     padding: 20px;

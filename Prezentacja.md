@@ -1,5 +1,9 @@
 # Warsztaty: Strona z Paralaksą + Quiz + Gra w Zgadywanie Słów
 
+https://docs.google.com/presentation/d/1iJWq0oKCkkppdteo00ofdkr4W9FxSqf4/edit#slide=id.p1
+
+
+
 ## Wstęp (5–10 minut)
 ### Cel: Uczestnicy:
 
