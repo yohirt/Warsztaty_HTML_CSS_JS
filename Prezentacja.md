@@ -94,7 +94,7 @@ Poniższy kod wklej (lub przepisz) do pliku index.html:
 </html>
 ```
 
-### Omówienie:
+### Zadanie Nawigacja:
 
 ```<header> / <nav>```: przykładowe menu nawigacyjne.
 
@@ -105,6 +105,66 @@ Sekcja quizu: ```id="quiz-section"```.
 Sekcja gry: ```id="game-section"```.
 
 ```<script src="script.js"></script>``` na końcu: dołączamy kod JS.
+
+---
+
+```html
+<nav>
+    <ul>
+        <li><a href="#parallax-section">Paralaksa</a></li>
+        <li><a href="#quiz-section">Quiz</a></li>
+        <li><a href="#game-section">Gra</a></li>
+    </ul>
+</nav>
+```
+
+**Krótki opis:**
+
+- Kod odpowiada za **menu nawigacyjne** widoczne na stronie.
+- Każdy link (`<a>`) w liście (`<ul>`) odwołuje się do innej sekcji za pomocą `href="#nazwa-sekcji"`.
+- Kliknięcie w link powoduje przewinięcie strony do elementu z odpowiadającym `id` (np. `id="parallax-section"`).
+- Upewnij się, że sekcje w HTML mają identyczne `id` jak w `href`.
+
+
+
+---
+**Dlaczego `href` ma taką nazwę i jak przekierowuje na konkretną część strony?**
+
+W nawigacji używamy linków typu `href="#nazwa-sekcji"`. Gdy klikniesz taki link, przeglądarka szuka elementu z atrybutem `id="nazwa-sekcji"` i przewija stronę właśnie do tego miejsca. Dlatego musisz nadać sekcji identyfikator (`id="quiz-section"`, `id="parallax-section"` itp.), a w linku (`<a>`) umieścić nazwę odpowiadającą temu `id` (np. `href="#quiz-section"`). Dzięki temu klikanie w menu prowadzi dokładnie do pasującej sekcji na stronie.
+
+---
+
+## Zadanie: Dodanie dwóch kolejnych sekcji paralaksowych
+
+## Opis zadania
+
+W tym ćwiczeniu uczniowie mają za zadanie wyszukać w internecie własne obrazy i wykorzystać je jako tło w **dwóch nowych sekcjach** paralaksowych.  
+Dzięki temu strona zyska dodatkowe „warstwy” przewijania z efektem `background-attachment: fixed;`.
+
+---
+
+## Kod do uzupełnienia
+
+### HTML (fragment do dodania w `index.html`)
+
+```html
+<!-- Druga sekcja paralaksy -->
+<section id="parallax-section2" class="parallax">
+  <div class="parallax-content">
+    <h2>Kolejna Sekcja Paralaksy</h2>
+    <p>Wstaw tutaj własny tekst.</p>
+  </div>
+</section>
+
+<!-- Trzecia sekcja paralaksy -->
+<section id="parallax-section3" class="parallax">
+  <div class="parallax-content">
+    <h2>Jeszcze Jedna Sekcja</h2>
+    <p>Wstaw tutaj własny tekst.</p>
+  </div>
+</section>
+
+```
 
 ## Stylowanie i efekt paralaksy (15 minut)
 Kod do pliku style.css:
@@ -146,7 +206,11 @@ header nav a {
 /* Sekcja paralaksy */
 .parallax {
   /* Tło, które będzie się poruszało wolniej niż okno przeglądarki */
-  background: url('https://picsum.photos/1920/1080') no-repeat center center;
+  
+  
+  background: url('https://picsum.photos/1920/1080') no-repeat center center; */
+  background: url('./images/wyspa.jpg') no-repeat center center;
+  
   background-size: cover;
   min-height: 100vh; /* wysokość okna */
   background-attachment: fixed; /* klucz do efektu paralaksy */

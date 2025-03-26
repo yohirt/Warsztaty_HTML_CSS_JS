@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Warsztaty: Paralaksa + Quiz + Word Guessing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sekcja nawigacyjna (opcjonalnie) -->
+  <header>
+
+</header>
+
+  <!-- Sekcja z efektem paralaksy -->
+  <section id="parallax-section" class="parallax">
+    <div class="parallax-content">
+      <h1>Witamy na naszych warsztatach!</h1>
+      <p>Przewiń w dół, aby przejść do quizu i gry</p>
+    </div>
+  </section>
+
+  <!-- Sekcja z quizem -->
+  <section id="quiz-section" class="quiz-container">
+    <h2>Quiz</h2>
+    <div id="quiz"></div>
+    <button id="nextButton">Następne pytanie</button>
+  </section>
+
+  <!-- Sekcja z grą w zgadywanie słów -->
+  <section id="game-section" class="game-container">
+    <h2>Gra w zgadywanie słów</h2>
+    <div class="game-content">
+      <p id="wordHint"></p>
+      <p id="incorrectLetters"></p>
+      <div id="guessArea"></div>
+      <input type="text" id="letterInput" maxlength="1" placeholder="Wpisz literę">
+      <button id="resetButton">Nowe słowo</button>
+    </div>
+  </section>
+
+  <!-- Podłączenie pliku JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
