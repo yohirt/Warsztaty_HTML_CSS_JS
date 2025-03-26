@@ -27,9 +27,14 @@
 
     <!-- Sekcja z quizem -->
     <section id="quiz-section" class="quiz-container parallax">
-      <h2>Quiz</h2>
-      <div id="quiz"></div>
-      <button id="nextButton">Następne pytanie</button>
+        <div class="quiz-box">
+            <h2 id="question">Pytanie</h2>
+            <ul id="answer-buttons" class="answer-buttons"></ul>
+            <div class="controls">
+              <button id="next-btn" class="next-btn">Następne</button>
+            </div>
+            <p id="score" class="score">Wynik: 0</p>
+        </div>
     </section>
 
     <!-- Sekcja z grą w zgadywanie słów -->
