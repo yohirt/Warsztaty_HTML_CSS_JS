@@ -68,24 +68,22 @@
 
   .quiz-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 60px 20px;
     background: #f2f2f2;
   }
   
   .quiz-box {
     background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     max-width: 600px;
     width: 100%;
-    text-align: center;
+    text-align: right;
   }
   
   .quiz-box h2 {
-    font-size: 24px;
+    font-size: 8px;
     margin-bottom: 20px;
   }
   
@@ -95,7 +93,7 @@
   }
   
   .answer-buttons li {
-    margin: 10px 0;
+    margin: 0px 0;
   }
   
   .answer-buttons button {
@@ -141,6 +139,6 @@
   .score {
     margin-top: 15px;
     font-weight: bold;
-    color: #333;
+    color: #e3e3e3;
   }
   
