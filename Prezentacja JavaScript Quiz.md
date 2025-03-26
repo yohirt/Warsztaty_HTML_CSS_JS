@@ -181,3 +181,71 @@ Licznik pokazuje Czas: 10s przy każdym pytaniu.
 Jeśli uczeń nie kliknie odpowiedzi w ciągu 10 sekund — quiz automatycznie przejdzie do kolejnego pytania.
 
 Jeśli uczeń kliknie wcześniej — licznik zatrzymuje się.
+
+
+# Instrukcja: Naprawa przycisku „Zagraj ponownie”
+
+## 🔍 Problem
+
+Po zakończeniu quizu wyświetla się przycisk **"Zagraj ponownie"**, ale jego kliknięcie nic nie robi – quiz nie uruchamia się od nowa.  
+Dlaczego? Ponieważ po zmianie tekstu przycisku nie został przypisany ponownie kod, który uruchamia quiz od początku.
+
+---
+
+## ✅ Rozwiązanie
+
+### Krok 1: Zmodyfikuj funkcję `nextButton.addEventListener(...)`
+
+Zamień istniejącą funkcję:
+
+```js
+nextButton.addEventListener("click", () => {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+});
+```
+
+
+Na wersję z obsługą trybu restartu quizu:
+
+```js
+nextButton.addEventListener("click", () => {
+  if (nextButton.innerText === "Zagraj ponownie") {
+    startQuiz();
+  } else {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showScore();
+    }
+  }
+});
+```
+## 🔁 Co się zmieniło?
+Sprawdzamy, czy tekst przycisku to "Zagraj ponownie".
+
+Jeśli tak – wywołujemy ponownie ```startQuiz()```.
+
+Dzięki temu quiz resetuje się i zaczyna od nowa.
+
+## 💡 Dodatkowo – reset timera na nowym starcie
+W funkcji startQuiz() dodaj też:
+
+```js
+clearInterval(timer);
+document.getElementById("timer").innerText = "";
+```
+
+Aby wyczyścić stary timer zanim zacznie się nowy quiz.
+
+## ✨ Efekt końcowy
+Quiz działa normalnie.
+
+Po ostatnim pytaniu pokazuje się wynik i przycisk „Zagraj ponownie”.
+
+Po kliknięciu tego przycisku quiz się resetuje i zaczyna od początku.

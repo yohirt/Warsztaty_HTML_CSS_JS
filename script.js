@@ -42,12 +42,13 @@ let timeLeft = 10;
 let timer;
 
 function startQuiz() {
+  clearInterval(timer); // zatrzymaj timer
+  document.getElementById("timer").innerText = "";
   currentQuestionIndex = 0;
   score = 0;
   nextButton.innerHTML = "Następne";
   showQuestion();
   scoreDisplay.innerText = `Wynik: ${score}`;
-  // startTimer(); // Uruchom timer na początku quizu
 }
 
 function startTimer() {
@@ -118,11 +119,15 @@ function selectAnswer(e) {
 }
 
 nextButton.addEventListener("click", () => {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-    showQuestion();
+  if (nextButton.innerText === "Zagraj ponownie") {
+    startQuiz();
   } else {
-    showScore();
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showScore();
+    }
   }
 });
 
