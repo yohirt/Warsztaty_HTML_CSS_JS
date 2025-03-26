@@ -1,10 +1,23 @@
 # Warsztaty: Strona z Paralaksą + Quiz + Gra w Zgadywanie Słów
 
-https://docs.google.com/presentation/d/1iJWq0oKCkkppdteo00ofdkr4W9FxSqf4/edit#slide=id.p1
-
-
-
 ## Wstęp (5–10 minut)
+
+### linki
+[Prezentacja ZST](https://docs.google.com/presentation/d/1iJWq0oKCkkppdteo00ofdkr4W9FxSqf4/edit#slide=id.p1)
+
+[Quiz](
+https://codepen.io/Sulaimon-Olaniran/pen/zYKJLjK
+)
+
+[Strona Paralax](
+https://www.codewithfaraz.com/content/334/how-to-create-a-parallax-website-with-html-and-css-step-by-step-guide#html-code
+)
+
+[Word quesing game](
+https://www.codingnepalweb.com/word-guessing-game-html-css-javascript/
+)
+
+
 ### Cel: Uczestnicy:
 
  - Poznają podstawy tworzenia stron z wykorzystaniem HTML, CSS i JavaScript.
